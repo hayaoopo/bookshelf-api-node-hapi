@@ -87,14 +87,22 @@ const getAllBooks = (request, h) => {
     // let naming;
     let isiBook = books;
 
-    console.log(typeof(reading));
+    // console.log(typeof (reading));
 
-    if (reading === '1') {
-        isiBook.filter((b) => b.reading === true);
-    } else if (reading === '0') {
-        isiBook.filter((b) => b.reading === false);
+    if (reading == '1') {
+        isiBook = isiBook.filter((b) => b.reading === true);
+    } else if (reading == '0') {
+        isiBook = isiBook.filter((b) => b.reading === false);
     }
 
+    if (finished == '1') {
+        isiBook = isiBook.filter((b) => b.finished === true);
+    } else if (finished == '0') {
+        isiBook = isiBook.filter((b) => b.finished === false);
+    }
+
+
+    // console.log(isiBook.filter((b) => b.reading === true));
 
     const response = h.response({
         status: "success",
