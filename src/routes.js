@@ -4,7 +4,7 @@ const {
   getBooksById,
   editBooksById,
   deleteBooksById,
-} = require('./handler')
+} = require('./handler');
 
 const routes = [
   // POST
